@@ -16,9 +16,14 @@ module GameOfLife
       expect(world.next_generation).to eq([[DEAD, ALIVE, DEAD], [DEAD, ALIVE, DEAD], [DEAD, ALIVE, DEAD]])
     end
 
-    it 'should give alive neighbors as 3' do
+    it 'should give alive neighbors as 2' do
       world = World.new([[DEAD, DEAD, DEAD], [ALIVE, ALIVE, ALIVE], [DEAD, DEAD, DEAD]])
-      expect(world.alive_neighbour_count(1, 1)).to eq(3)
+      expect(world.alive_neighbour_count(1, 1)).to eq(2)
+    end
+
+    it 'should give alive neighbors as 2 for [DEAD, DEAD, DEAD], [ALIVE, ALIVE, ALIVE], [DEAD, DEAD, DEAD]] and (1, 1) ' do
+      world = World.new([[DEAD, DEAD, DEAD], [ALIVE, ALIVE, ALIVE], [DEAD, DEAD, DEAD]])
+      expect(world.alive_neighbour_count(1, 1)).to eq(2)
     end
 
   end

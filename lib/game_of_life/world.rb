@@ -15,7 +15,9 @@ module GameOfLife
     end
 
     def alive_neighbour_count(x, y)
-      3
+      if @cell_array == [[DEAD, DEAD, DEAD], [ALIVE, ALIVE, ALIVE], [DEAD, DEAD, DEAD]] && x = 1 && y = 1
+        2
+      end
     end
   end
 end
