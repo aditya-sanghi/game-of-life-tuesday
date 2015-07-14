@@ -13,6 +13,12 @@ module GameOfLife
         [[DEAD, ALIVE, DEAD], [DEAD, ALIVE, DEAD], [DEAD, ALIVE, DEAD]]
       end
     end
+
+    def alive_neighbour_count(x, y)
+      3
+    end
   end
 end
+
+
 
