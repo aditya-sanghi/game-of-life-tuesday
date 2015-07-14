@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 module GameOfLife
+  DEAD = World::DEAD
+  ALIVE = World::ALIVE
   describe World do
 
     it 'should give nil for the next generation ' do
@@ -8,9 +10,9 @@ module GameOfLife
       expect(world.next_generation).to eq(NIL)
     end
 
-    it 'should generate [[0, 1, 0], [0, 1, 0], [0, 1, 0]]  for input [[0, 0, 0], [1, 1, 1], [0, 0, 0]] ' do
-      world = World.new([[0, 0, 0], [1, 1, 1], [0, 0, 0]])
-      expect(world.next_generation).to eq([[0, 1, 0], [0, 1, 0], [0, 1, 0]])
+    it 'should generate [[DEAD, ALIVE, DEAD], [DEAD, ALIVE, DEAD], [DEAD, ALIVE, DEAD]]  for input [[DEAD, DEAD, DEAD], [ALIVE, ALIVE, ALIVE], [DEAD, DEAD, DEAD]] ' do
+      world = World.new([[DEAD, DEAD, DEAD], [ALIVE, ALIVE, ALIVE], [DEAD, DEAD, DEAD]])
+      expect(world.next_generation).to eq([[DEAD, ALIVE, DEAD], [DEAD, ALIVE, DEAD], [DEAD, ALIVE, DEAD]])
     end
   end
 end
